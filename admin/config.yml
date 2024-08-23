@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: lntuandat/decapwebbanhang
-  branch: main
+  branch: master
 
 media_folder: "static/img"
 public_folder: "/img"
