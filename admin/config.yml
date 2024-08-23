@@ -10,12 +10,15 @@ media_folder: "Images"  # Hoặc "ảnh" tùy thuộc vào thư mục bạn sử
 public_folder: "/Images"  # Hoặc "/ảnh" nếu bạn dùng thư mục đó
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    # Nếu bạn không sử dụng thư mục content, hãy chỉ định hoặc bỏ qua
-    folder: "content/blog"  # Chỉ định thư mục lưu trữ nội dung nếu cần
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+  
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
