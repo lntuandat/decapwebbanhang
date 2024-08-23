@@ -3,13 +3,17 @@ backend:
   repo: lntuandat/decapwebbanhang
   branch: master
 
-media_folder: "static/img"
-public_folder: "/img"
+# Chọn một đường dẫn hợp lệ cho media_folder
+media_folder: "Images"  # Hoặc "ảnh" tùy thuộc vào thư mục bạn sử dụng
+
+# public_folder nên là đường dẫn tương đối từ gốc dự án
+public_folder: "/Images"  # Hoặc "/ảnh" nếu bạn dùng thư mục đó
 
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
+    # Nếu bạn không sử dụng thư mục content, hãy chỉ định hoặc bỏ qua
+    folder: "content/blog"  # Chỉ định thư mục lưu trữ nội dung nếu cần
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
