@@ -2,8 +2,6 @@ backend:
   name: github
   repo: lntuandat/decapwebbanhang  # Thay bằng đường dẫn đầy đủ đến repository GitHub của bạn
   branch: master  # Nhánh mà bạn muốn sử dụng cho CMS
-  auth_endpoint: /login/oauth/authorize
-  app_id: Ov23li6DYEU120Wr0rSn  # Đảm bảo rằng app_id là chính xác và liên kết với ứng dụng OAuth của bạn
 
 media_folder: "Images"  # Thư mục để lưu trữ các tệp media (hình ảnh, video, ...)
 public_folder: "/Images"  # Đường dẫn công khai cho các tệp media
