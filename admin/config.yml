@@ -1,10 +1,10 @@
 backend:
-  name: github
+  name: git-gateway
   repo: lntuandat/decapwebbanhang
   branch: master
 
-media_folder: "static/img"
-public_folder: "/img"
+media_folder: "static/images/uploads" 
+public_folder: "/images/uploads"
 
 collections:
   - name: "blog"
