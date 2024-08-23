@@ -1,7 +1,10 @@
 backend:
   name: github
   repo: lntuandat/decapwebbanhang
-  branch: master
+  branch: master # Hoặc branch chính mà bạn sử dụng
+  base_url: https://github.com
+  auth_endpoint: /login/oauth/authorize
+  app_id: Ov23li6DYEU120Wr0rSn
 
 media_folder: "Images"
 public_folder: "/Images"
