@@ -6,17 +6,4 @@ backend:
   auth_endpoint: /login/oauth/authorize
   app_id: Ov23li6DYEU120Wr0rSn
 
-media_folder: "Images"
-public_folder: "/Images"
-
-collections:
-  - name: "pages"
-    label: "Pages"
-    folder: ""
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Layout", name: "layout", widget: "select", options: ["default", "page"] }
 
