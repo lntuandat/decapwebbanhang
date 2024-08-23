@@ -1,32 +1,44 @@
 backend:
-  name: github
-  repo: lntuandat/decapwebbanhang  # Thay bằng đường dẫn đầy đủ đến repository GitHub của bạn
-  branch: master  # Nhánh mà bạn muốn sử dụng cho CMS
+  name: git-gateway
+  repo: lntuandat/decapwedbanhang
+  branch: main  # Thay đổi thành nhánh bạn đang sử dụng nếu không phải là "main"
 
-media_folder: "Images"  # Thư mục để lưu trữ các tệp media (hình ảnh, video, ...)
-public_folder: "/Images"  # Đường dẫn công khai cho các tệp media
+media_folder: "Images" # Thư mục lưu trữ hình ảnh
+public_folder: "/Images"
 
 collections:
   - name: "pages"
     label: "Pages"
     files:
-      - label: "Trang chủ"
-        name: "index"
+      - name: "index"
+        label: "Home Page"
         file: "index.html"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
 
-      - label: "Giới Thiệu"
-        name: "gioithieu"
+      - name: "about"
+        label: "About Page"
         file: "GioiThieu.html"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
 
-      - label: "Sản Phẩm"
-        name: "sanpham"
-        file: "Sanpham.html"
+      - name: "contact"
+        label: "Contact Page"
+        file: "LienHe.html"  # Thay đổi tên tệp nếu cần
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "body", widget: "markdown" }
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "products"
+    label: "Products"
+    folder: "products"  # Thư mục chứa các tệp sản phẩm
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Name", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Price", name: "price", widget: "number"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "HTML File", name: "file", widget: "hidden", default: "products/{{slug}}.html"}
