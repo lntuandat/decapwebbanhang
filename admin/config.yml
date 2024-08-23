@@ -3,22 +3,15 @@ backend:
   repo: lntuandat/decapwebbanhang
   branch: master
 
-# Chọn một đường dẫn hợp lệ cho media_folder
-media_folder: "Images"  # Hoặc "ảnh" tùy thuộc vào thư mục bạn sử dụng
-
-# public_folder nên là đường dẫn tương đối từ gốc dự án
-public_folder: "/Images"  # Hoặc "/ảnh" nếu bạn dùng thư mục đó
+media_folder: "static/img"
+public_folder: "/img"
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-  
-    create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Rating (scale of 1-5)", name: "rating", widget: "number" }
       - { label: "Body", name: "body", widget: "markdown" }
