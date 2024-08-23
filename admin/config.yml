@@ -3,15 +3,17 @@ backend:
   repo: lntuandat/decapwebbanhang
   branch: master
 
-media_folder: "static/img"
-public_folder: "/img"
+media_folder: "Images"
+public_folder: "/Images"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "pages"
+    label: "Pages"
+    folder: ""
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "select", options: ["default", "page"] }
+
