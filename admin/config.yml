@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: lntuandat/decapwebbanhang
+  repo: decapwebbanhang
   branch: master # Hoặc branch chính mà bạn sử dụng
   base_url: https://decapwebbanhang.vercel.app/
   auth_endpoint: /login/oauth/authorize
