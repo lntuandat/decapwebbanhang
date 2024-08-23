@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: lntuandat/decapwedbanhang
-  branch: main  # Thay đổi thành nhánh bạn đang sử dụng nếu không phải là "main"
+  branch: master  # Thay đổi thành nhánh bạn đang sử dụng nếu không phải là "main"
 
 media_folder: "Images" # Thư mục lưu trữ hình ảnh
 public_folder: "/Images"
